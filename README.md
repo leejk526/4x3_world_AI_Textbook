@@ -1,8 +1,7 @@
 # 4x3_world_AI_Textbook
 
-This code is to calculate the utilities at each state for "4x3 world" problem using Value Iteration.
-
-The more detailed information is at the page 645 to 653 in AI textbook. 
+This code is to calculate the utilities at each state for "4x3 world" problem using Value Iteration. <br />
+The more detailed information is at the page 645 to 653 in AI textbook. <br />
 
 Download Link : https://www.ics.uci.edu/~rickl/courses/cs-171/aima-resources/Artificial%20Intelligence%20A%20Modern%20Approach%20(3rd%20Edition).pdf
 
