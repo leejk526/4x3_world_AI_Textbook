@@ -15,11 +15,11 @@ Download Link : https://www.ics.uci.edu/~rickl/courses/cs-171/aima-resources/Art
 
 - Description
 
-sp : a start point (1, 1) <br />
-wa : a wall which is blocked <br />
-+1 : reward +1 <br />
--1 : reward -1 <br />
-__ : a space which the agent can stay <br />
+    sp : a start point (1, 1) <br />
+    wa : a wall which is blocked <br />
+    +1 : reward +1 <br />
+    -1 : reward -1 <br />
+    __ : a space which the agent can stay <br />
 
 coordinate order: left, up i.e. horizon first, verticality second <br />
 e.g., +1 => (4, 3)
