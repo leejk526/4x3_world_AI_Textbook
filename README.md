@@ -14,44 +14,39 @@ Download Link : https://www.ics.uci.edu/~rickl/courses/cs-171/aima-resources/Art
 ```
 
 - Description
-
     sp : a start point (1, 1) <br />
     wa : a wall which is blocked <br />
     +1 : reward +1 <br />
     -1 : reward -1 <br />
     __ : a space which the agent can stay <br />
 
-coordinate order: left, up i.e. horizon first, verticality second <br />
-e.g., +1 => (4, 3)
-      -1 => (4, 2)
+    coordinate order: left, up i.e. horizon first, verticality second <br />
+    e.g., +1 => (4, 3)
+          -1 => (4, 2)
 
 - Action
-
-An agent can act to go one step. <br />
-The cases are "Up", "Right", "Down", "Left" <br />
+    An agent can act to go one step. <br />
+    The cases are "Up", "Right", "Down", "Left" <br />
 
 - Noisy
-
-An agent do action to go one step, and it has noisies, <br />
-Go straight with probability 0.8             P(gs) = 0.8   That is an intention to go forward <br />
-Left unintentionally with probability 0.1    P(l) = 0.1    An noisy to go left unintentionally <br />
-Right unintentionally with probability 0.1   P(r) = 0.1    Ao noisy to go right unintentionally <br />
+    An agent do action to go one step, and it has noisies, <br />
+    Go straight with probability 0.8             P(gs) = 0.8   That is an intention to go forward <br />
+    Left unintentionally with probability 0.1    P(l) = 0.1    An noisy to go left unintentionally <br />
+    Right unintentionally with probability 0.1   P(r) = 0.1    Ao noisy to go right unintentionally <br />
 
 - Reward
-
-Except the states (4,3) and (4,2) (those are +1, -1), R(s) = -0.04
+    Except the states (4,3) and (4,2) (those are +1, -1), R(s) = -0.04
 
 - Optimal Policy
+    An Optimal policy for the R(s) = -0.04 is
 
-An Optimal policy for the R(s) = -0.04 is
-
-```
-3 [Ri, Ri, Ri,  1]
-2 [Up, xx, Up, -1]
-1 [Up, Le, Le, Le]
-    1   2   3   4
-```
-Ri : Right, Le : Left
+    ```
+    3 [Ri, Ri, Ri,  1]
+    2 [Up, xx, Up, -1]
+    1 [Up, Le, Le, Le]
+        1   2   3   4
+    ```
+    Ri : Right, Le : Left
 
 ### Value Iteration Pseudo code
 
