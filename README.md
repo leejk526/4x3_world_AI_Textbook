@@ -13,7 +13,7 @@ Download Link : https://www.ics.uci.edu/~rickl/courses/cs-171/aima-resources/Art
     1   2   3   4
 ```
 
-### Description
+- Description
 
 sp : a start point (1, 1) <br />
 wa : a wall which is blocked <br />
@@ -25,23 +25,23 @@ coordinate order: left, up i.e. horizon first, verticality second <br />
 e.g., +1 => (4, 3)
       -1 => (4, 2)
 
-### Action
+- Action
 
 An agent can act to go one step. <br />
 The cases are "Up", "Right", "Down", "Left" <br />
 
-### Noisy
+- Noisy
 
 An agent do action to go one step, and it has noisies, <br />
 Go straight with probability 0.8             P(gs) = 0.8   That is an intention to go forward <br />
 Left unintentionally with probability 0.1    P(l) = 0.1    An noisy to go left unintentionally <br />
 Right unintentionally with probability 0.1   P(r) = 0.1    Ao noisy to go right unintentionally <br />
 
-### Reward
+- Reward
 
 Except the states (4,3) and (4,2) (those are +1, -1), R(s) = -0.04
 
-### Optimal Policy
+- Optimal Policy
 
 An Optimal policy for the R(s) = -0.04 is
 
