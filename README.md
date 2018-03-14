@@ -51,3 +51,13 @@ Download Link : https://www.ics.uci.edu/~rickl/courses/cs-171/aima-resources/Art
 ### Value Iteration Pseudo code
 
 refer to the page 653 in AI textbook.
+
+### Value Iteration Results
+
+```
+Iteration to converge : 33
+
+[0.811  0.868  0.918   1.0]
+[0.761  _____  0.66   -1.0]
+[0.705  0.655  0.611 0.387]
+```

@@ -1,52 +1,4 @@
-# This code is to calculate the utilities at each state for "4x3 world" problem using Value Iteration.
-# The more detailed information is at the page 645 to 653 in AI textbook. 
-# Download Link : https://www.ics.uci.edu/~rickl/courses/cs-171/aima-resources/Artificial%20Intelligence%20A%20Modern%20Approach%20(3rd%20Edition).pdf
-#
-# ** Visualization of 4x3 world problem 
-#
-# 3 [__, __, __, +1]
-# 2 [__, wa, __, -1]
-# 1 [sp, __, __, __]
-#     1   2   3   4
-#
-# - description
-# sp : a start point (1, 1)
-# wa : a wall which is blocked
-# +1 : reward +1
-# -1 : reward -1
-# __ : a space which the agent can stay
-# horizon first, vertical second
-# i.e. coordinate order: left, up
-# e.g., +1 => (4, 3)
-#       -1 => (4, 2)
-#
-# ** Action
-# An agent can act to go one step.
-# The cases are "Up", "Right", "Down", "Left"
-#
-# ** Noisy
-# An agent do action to go one step, and it has noisies,
-# Go straight with probability 0.8             P(gs) = 0.8   That is an intention to go forward
-# Left unintentionally with probability 0.1    P(l) = 0.1    An noisy to go left unintentionally
-# Right unintentionally with probability 0.1   P(r) = 0.1    Ao noisy to go right unintentionally
-#
-# ** Reward
-# Except the states (4,3) and (4,2) (those are +1, -1), R(s) = -0.04
-#
-# ** Optimal Policy
-# An Optimal policy for the R(s) = -0.04 is
-#
-# 3 [->, ->, ->,  1]
-# 2 [ ^,  x,  ^, -1]
-# 1 [ ^, <-, <-, <-]
-#     1   2   3   4
-#
-# Discount factor "gamma", i.e. "df" is 1
-#
-# A utility equation is,
-# U^(pi) (s) = E[ sigma(t=0 to inf) (df^(t) * R(S_t))
-# 
-# S_t is Random Variable for state
+# to calculate Utilties using Value Iteration.
 
 import ipdb
 import random
@@ -106,7 +58,7 @@ def is_neighbor(s, move, States):
     else:
         return s, False
 
-def value_iteration(States, A, TM, R, df=1, eps=0.0001, pf=False, piter=100):
+def value_iteration(States, A, TM, R, df=0.999, eps=0.0001, pf=False, piter=100):
     """
     - arguments
     States : all states in the set of state ['1,1', '1,2', ... '4,3']
@@ -166,8 +118,6 @@ def value_iteration(States, A, TM, R, df=1, eps=0.0001, pf=False, piter=100):
     return U
 
 def print_U(U):
-#    for key_s, u in U.items():       
-#        print("state ({},{}) : utility : {}\n".format(key_s[0], key_s[2], u))
     for vert in [3, 2, 1]:
         string = '['
         for horz in [1, 2, 3, 4]:
@@ -175,7 +125,9 @@ def print_U(U):
             if s == '2,2':
                 string += "_____"
             else:
-                string += str(round(U[s], 3))
+                rnd = str(round(U[s], 3))
+                while len(rnd) < 5: rnd = ' ' + rnd
+                string += rnd
             if horz != 4:
                 string += "  "
         
